@@ -21,20 +21,25 @@ public class Game {
 
     Scanner input2 = new Scanner (System.in);
     System.out.println("Your Guess?");
-    String guess = input2.nextInt(); //Get user input
+    int guess = input2.nextInt(); //Get user's 1st guess
+    int count = 0;
     while (guess != number) {
-      int count = 0
+
       if (guess > number) {
-        count ++
+        System.out.println("Your guess is too high, try again.");
+        System.out.println("Your Guess?");
+         guess = input2.nextInt();
+        count ++;
       }
       else if (guess < number) {
-        count ++
+        System.out.println("Your guess is too low, try again.");
+        System.out.println("Your Guess?");
+        guess = input2.nextInt();
+        count ++;
       }
-      else {
-        System.out.println("Well done," + name + "you fund my number in" + count + "tries!")
-      }
-    }
 
+    }
+    System.out.println("Well done, " + name + " you found my number in " + count + " tries!");
   }
 
 }
